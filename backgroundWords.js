@@ -14,7 +14,7 @@ const backgroundWords = [
 
 // 💖 Функция для генерации множества комплиментов (увеличено в 3 раза)
 function generateCompliments() {
-    for (let i = 0; i < backgroundWords.length * 3; i++) {
+    for (let i = 0; i < backgroundWords.length; i++) {
         const word = document.createElement("span");
         word.classList.add("compliment-word");
         word.innerText = backgroundWords[i % backgroundWords.length]; // Зацикливаем список
