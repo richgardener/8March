@@ -8,12 +8,14 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #ff0140, #511d27);
     font-family: 'Arial', sans-serif;
     text-align: center;
     overflow: hidden;
     position: relative;
     box-sizing: border-box;
+    background: linear-gradient(135deg, #ff0140, #511d27);
+    background-size: cover; /* ✅ Растягиваем градиент на весь экран */
+    background-attachment: fixed; /* ✅ Фиксируем фон, чтобы он не двигался */
 }
 
 /* Полностью запрещаем выделение текста на всей странице */
