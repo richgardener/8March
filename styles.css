@@ -10,8 +10,6 @@ body {
     text-align: center;
     overflow: hidden;
     position: relative;
-    touch-action: none; /* 🔥 Отключает зум и свайпы на мобильных */
-    overflow: hidden; /* 🔥 Запрещает прокрутку (если не нужна) */
 }
 
 html, body {
@@ -19,13 +17,13 @@ html, body {
     height: 100vh; /* Заполняем весь экран */
     margin: 0;
     padding: 0;
-    overflow: hidden; /* 🔥 Полностью убираем прокрутку */
     display: flex;
     justify-content: center;
     align-items: center;
     background-size: cover; /* 🔥 Фон полностью заполняет экран */
     background-position: center;
     background-attachment: fixed; /* Оставляем фон статичным */
+    touch-action: manipulation;
 }
 
 
@@ -239,3 +237,4 @@ html, body {
     0% { transform: translateY(0px) scale(1); opacity: 0.5; }
     100% { transform: translateY(-10px) scale(1.1); opacity: 0.8; }
 }
+
