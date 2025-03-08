@@ -1,18 +1,4 @@
-document.addEventListener("dblclick", function(event) {
-    event.preventDefault(); // 🔥 Полностью блокируем двойной тап
-}, { passive: false });
 
-document.addEventListener("wheel", function(event) {
-    if (event.ctrlKey) { // 🔥 Запрещаем зум через Ctrl + колесо мыши
-        event.preventDefault();
-    }
-}, { passive: false });
-
-document.addEventListener("keydown", function(event) {
-    if ((event.ctrlKey || event.metaKey) && (event.key === "+" || event.key === "-" || event.key === "0")) {
-        event.preventDefault(); // 🔥 Запрещаем Ctrl + + / Ctrl + - / Ctrl + 0
-    }
-});
 
 
 // Получаем `data-user` из `body`
