@@ -173,12 +173,12 @@ body {
 
 .compliment-word {
     position: absolute;
-    font-size: 24px;
+    font-size: 30px;
     font-family: 'Dancing Script', cursive;
     color: rgba(255, 255, 255, 0.5);
     font-weight: bold;
     opacity: 0.6;
-    filter: blur(1.5px); /* ✅ Увеличил размытие для лучшей читаемости кнопки */
+    filter: blur(1px); /* ✅ Увеличил размытие для лучшей читаемости кнопки */
     z-index: 1; /* ✅ Отправляем слова под кнопку */
     animation: floatText 5s infinite alternate ease-in-out;
 }
