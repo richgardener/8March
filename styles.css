@@ -10,7 +10,24 @@ body {
     text-align: center;
     overflow: hidden;
     position: relative;
+    touch-action: none; /* 🔥 Отключает зум и свайпы на мобильных */
+    overflow: hidden; /* 🔥 Запрещает прокрутку (если не нужна) */
 }
+
+html, body {
+    width: 100%;
+    height: 100vh; /* Заполняем весь экран */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 🔥 Полностью убираем прокрутку */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover; /* 🔥 Фон полностью заполняет экран */
+    background-position: center;
+    background-attachment: fixed; /* Оставляем фон статичным */
+}
+
 
 /* 📱 Адаптация только для телефонов (до 768px) */
 @media (max-width: 768px) {
@@ -102,7 +119,7 @@ body {
 }
 
 
-/* Контейнер для кнопки и текста (фиксируем размер) */
+/* Контейнер для кнопки и текста (фиксируем размер и привязываем к низу) */
 #buttonContainer {
     display: flex;
     flex-direction: column;
@@ -116,9 +133,13 @@ body {
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
-    position: relative;
+    position: absolute; /* 🔥 Фиксируем контейнер */
+    bottom: 20px; /* 🔥 Отступ от нижнего края */
+    left: 50%; /* Центрируем */
+    transform: translateX(-50%); /* 🔥 Исправляем центрирование */
     z-index: 2;
 }
+
 
 #nextButton {
     background: #ff4a6e;
@@ -218,4 +239,3 @@ body {
     0% { transform: translateY(0px) scale(1); opacity: 0.5; }
     100% { transform: translateY(-10px) scale(1.1); opacity: 0.8; }
 }
-
