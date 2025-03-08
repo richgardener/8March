@@ -1,11 +1,3 @@
-// 🔥 Отключаем зум на всех устройствах
-document.addEventListener("dblclick", event => event.preventDefault(), { passive: false });
-document.addEventListener("wheel", event => { if (event.ctrlKey) event.preventDefault(); }, { passive: false });
-document.addEventListener("keydown", event => {
-    if ((event.ctrlKey || event.metaKey) && ["+", "-", "0"].includes(event.key)) {
-        event.preventDefault();
-    }
-});
 
 // 🔥 Определяем пользователя (какой массив фраз использовать)
 const user = document.body.getAttribute("data-user") || "default";
@@ -65,32 +57,23 @@ function handleClick(event) {
     clickCount++;
     createHeart(event.clientX, event.clientY);
 
-    console.log(`🔹 Click: ${clickCount} / ${clicksNeeded}`); // ✅ Отладка кликов
-
     if (clickCount >= clicksNeeded) {
-        console.log("🎉 Достигнут предел кликов!");
-
         if (level >= maxLevel) {
-            console.log("🏁 Максимальный уровень! Отправляем в Telegram...");
             sendMessage();
         } else {
             level++; // ✅ Повышаем уровень
             clickCount = 0; // ✅ Сбрасываем счётчик кликов
             clicksNeeded = baseClicks + stepIncrease * (level - 1);
 
-            console.log(`🚀 Новый уровень: ${level}, кликов нужно: ${clicksNeeded}`);
-
             document.getElementById("levelCounter").innerText = `Level: ${level}`; // ✅ Обновляем уровень
             showRandomCompliment(); // ✅ Меняем комплимент
             updateCounter(); // ✅ Обновляем счётчик
-
             animateLevelUp(); // ✅ Визуальная анимация
         }
     } else {
         updateCounter(); // ✅ Обновляем счётчик кликов
     }
 }
-
 
 // 🔥 Запуск игры
 function startGame() {
