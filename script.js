@@ -1,3 +1,7 @@
+document.addEventListener("dblclick", function(event) {
+    event.preventDefault(); // 🔥 Полностью блокируем двойной тап
+}, { passive: false });
+
 document.addEventListener("wheel", function(event) {
     if (event.ctrlKey) { // 🔥 Запрещаем зум через Ctrl + колесо мыши
         event.preventDefault();
