@@ -30,7 +30,7 @@ const complimentList = user === "codm" ? [
 ];
 
 let usedCompliments = [], level = 1, clickCount = 0;
-const stepIncrease = 1, baseClicks = 1, maxLevel = 7;
+const stepIncrease = 5, baseClicks = 5, maxLevel = 7;
 let clicksNeeded = baseClicks;
 
 // 🔥 Выбираем и сразу выводим случайную фразу
